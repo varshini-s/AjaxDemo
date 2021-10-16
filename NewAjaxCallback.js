@@ -1,5 +1,16 @@
 let XMLHttpRequest=require("xmlhttprequest").XMLHttpRequest;
 
+function makeAJAXCall(methodType,url,callback,async=true,data=null)
+{
+    let xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        console.log(methodType+" state changed called at: "+showTime()+
+                    "RS: "+xhr.readyState+" Status: "+xhr.status)
+    }
+    xhr.open(methodType,url,async);
+    xhr.send();
+    console.log(methodType+" Request sent to server at: "+showTime())
+}
 
 const getURL="http://127.0.0.1:3000/employees/1"
 function getUserDetails(data)
