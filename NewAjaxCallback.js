@@ -36,7 +36,7 @@ function makeAJAXCall(methodType,url,callback,async=true,data=null)
     }
     else
     {
-    xhr.send();
+        xhr.send();
     }
     console.log(methodType+" Request sent to server at: "+showTime())
 }
