@@ -1,5 +1,11 @@
 let XMLHttpRequest=require("xmlhttprequest").XMLHttpRequest;
 
+function showTime()
+{
+    const date=  new Date();
+    return date.getHours()+"Hrs:"+date.getMinutes()+"Mins:"+date.getSeconds()+"Seconds";
+}
+
 function makeAJAXCall(methodType,url,callback,async=true,data=null)
 {
     let xhr = new XMLHttpRequest();
