@@ -34,8 +34,21 @@ function makeAJAXCall(methodType,url,callback,async=true,data=null)
 const getURL="http://127.0.0.1:3000/employees/1"
 function getUserDetails(data)
 {
-    console.log("get user data at: "+showTime()+" data: "+data)
+    console.log("get user data : "+data)
 }
-
 makeAJAXCall("GET",getURL,getUserDetails,true);
-console.log("Made GET AJAX Call to Server at "+showTime());
+
+const deleteURL="http://127.0.0.1:3000/employees/4";
+function userDeleted(data)
+{
+    console.log("User deleted: "+data)
+}
+makeAJAXCall("DELETE",deleteURL,userDeleted,true);
+
+const postURL="http://127.0.0.1:3000/employees";
+const emplData={"name":"Harry","salary":"50000"}
+function userAdded(data)
+{
+    console.log("User deleted: "+data)
+}
+makeAJAXCall("POST",postURL,userAdded,true,emplData);
