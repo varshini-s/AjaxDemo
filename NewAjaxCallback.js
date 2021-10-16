@@ -27,7 +27,17 @@ function makeAJAXCall(methodType,url,callback,async=true,data=null)
         
     }
     xhr.open(methodType,url,async);
+
+    if(data)
+    {
+        console.log(JSON.stringify(data));
+        xhr.setRequestHeader("Content-Type","application/json");
+        xhr.send(JSON.stringify(data));
+    }
+    else
+    {
     xhr.send();
+    }
     console.log(methodType+" Request sent to server at: "+showTime())
 }
 
