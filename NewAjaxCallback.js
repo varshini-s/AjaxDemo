@@ -12,6 +12,19 @@ function makeAJAXCall(methodType,url,callback,async=true,data=null)
     xhr.onreadystatechange = function(){
         console.log(methodType+" state changed called at: "+showTime()+
                     "RS: "+xhr.readyState+" Status: "+xhr.status)
+        if(xhr.readyState==4)
+        {
+            if(xhr.status==200|| xhr.status==201)
+            {
+                callback(xhr.responseText)
+            }
+            else if(xhr.status>=400)
+            {
+                console.log("Handle 400 client error or 500 server error at "+showTime());
+            }
+
+        }
+        
     }
     xhr.open(methodType,url,async);
     xhr.send();
