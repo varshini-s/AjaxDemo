@@ -1,3 +1,3 @@
 # AjaxDemo
 
-Employee Payroll App - Demonstration of using Async, Ajax, Callback and Promise.
+Employee Payroll App - Demonstration using Async, Ajax, Callback and Promise.
