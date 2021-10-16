@@ -6,3 +6,6 @@ function getUserDetails(data)
 {
     console.log("get user data at: "+showTime()+" data: "+data)
 }
+
+makeAJAXCall("GET",getURL,getUserDetails,true);
+console.log("Made GET AJAX Call to Server at "+showTime());
